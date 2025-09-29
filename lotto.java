@@ -41,15 +41,7 @@ public class lotto {
        System.out.println("And the winning numbers are: ");
         for (int i = 0; i < 5; i++){
             System.out.print(output[i] + ", ");
-       }
-    
-    
-        
-        
-        
-        
-        
-        
+       }  
         
             for (int i = 0; i < 4; i++){
                 if (input[i+1] == output[i+1]){
