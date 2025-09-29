@@ -7,12 +7,12 @@ public class lotto {
         int[] output = new int [5];
 
         userNumb(input);
+        systemNumb(output);
 
-         for (int i = 0; i < 5; i++){
+
+         /*for (int i = 0; i < 5; i++){
                 System.out.println(input[i]);
-            }
-
-
+           } */ 
 
     }
 
@@ -28,11 +28,9 @@ public class lotto {
        }
     }
     
-    public static int systemNumb() {
-       
-        int[] output = new int [5];
-
-        return 0;
+    public static void systemNumb(int[] array) {
+        
+        int randomNum = (int)(Math.random() * 35); // 0 to 100
         
     }
 }
