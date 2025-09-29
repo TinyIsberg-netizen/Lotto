@@ -3,32 +3,35 @@ import java.util.Scanner;
 public class lotto {
     public static void main(String[] args) {
         
-        int[] input;
-        int[] output;
+        int[] input = new int [5];
+        int[] output = new int [5];
 
-        userNumb();
+        userNumb(input);
+
+         for (int i = 0; i < 5; i++){
+                System.out.println(input[i]);
+            }
 
 
-      
-    
-   
 
     }
 
-    public static int userNumb() {
+    public static void userNumb(int[] array) {
+        
         Scanner userScan = new Scanner(System.in);
         int userNumb;
+
         for (int i = 0; i < 5; i++){
             userNumb = userScan.nextInt();
-            System.out.println(userNumb);
-        }
+            array[i] = userNumb;
 
-        return 0;
-        
+       }
     }
     
     public static int systemNumb() {
-        
+       
+        int[] output = new int [5];
+
         return 0;
         
     }
