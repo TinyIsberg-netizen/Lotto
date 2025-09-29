@@ -1,13 +1,21 @@
-import java.util.Random;
-import java.util.Scanner;
-public static void main(String[] args){
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-    Random rand = new Random();
+public class Liam_Lotto {
+  public static void main(String[] args) {
+    int[] GambaArray = 
+    List<int> list = Arrays.asList(GambaArray);
 
-    int Randomnummer = rand.nextInt(35);
+    Collections.shuffle(list);
 
-
+    System.out.println(list);
+  }
 }
+
+
+
+
 
 
 
