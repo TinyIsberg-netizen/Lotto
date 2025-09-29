@@ -7,9 +7,7 @@ public class lotto {
 
         Welcome to the Lotto game!
 
-        Please select 5 numbers between 1 - 35
-                
-                """;
+        Please select 5 numbers between 1 - 35""";
         
         String menuEnd = """ 
 
