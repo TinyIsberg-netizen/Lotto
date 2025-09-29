@@ -1,18 +1,65 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class lotto {
     public static void main(String[] args) {
+
+        String menuStart = """
+
+        Welcome to the Lotto game!
+
+        Please select 5 numbers between 1 - 35
+                
+                """;
         
+        String menuEnd = """ 
+
+        Would you like to play again?
+
+        1. Yes
+        2. No
+                
+                """;
+        
+        System.out.println(menuStart);
+
         int[] input = new int [5];
         int[] output = new int [5];
+        int score = 0;
+        
+        System.out.println("");
 
-        userNumb(input);
-        systemNumb(output);
+        userNumb(input); //gathers the users 5 numbers
 
+        systemNumb(output); //gathers 5 random numbers from a list of 35
 
-         /*for (int i = 0; i < 5; i++){
-                System.out.println(input[i]);
-           } */ 
+        System.out.println("You have selected the following numbers: ");
+        for (int i = 0; i < 5; i++){
+            System.out.print(input[i] + ", ");
+       }
+
+       System.out.println("");
+       System.out.println("And the winning numbers are: ");
+        for (int i = 0; i < 5; i++){
+            System.out.print(output[i] + ", ");
+       }
+    
+    
+        
+        
+        
+        
+        
+        
+        
+            for (int i = 0; i < 4; i++){
+                if (input[i+1] == output[i+1]){
+                    score = +1;
+                }else{
+                    
+                }
+            }
+        
+        System.out.println("\nYou had a total of " + score + " matches!");
 
     }
 
@@ -24,13 +71,22 @@ public class lotto {
         for (int i = 0; i < 5; i++){
             userNumb = userScan.nextInt();
             array[i] = userNumb;
-
        }
     }
     
     public static void systemNumb(int[] array) {
         
-        int randomNum = (int)(Math.random() * 35); // 0 to 100
+        List<Integer> oneTo35 = new ArrayList<>();
+       
+            for (int i = 1; i <= 35; i++) {
+                oneTo35.add(i);
+            }
+      
+        Collections.shuffle(oneTo35);
         
+            for (int i = 0; i < array.length; i++) {
+                array[i] = oneTo35.get(i);
+      
+        }
     }
 }
