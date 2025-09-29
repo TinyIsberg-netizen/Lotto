@@ -2,7 +2,7 @@ import java.util.*;
 
 public class lotto {
     public static void main(String[] args) {
-
+        Boolean keepPlay = true;
         String menuStart = """
 
         Welcome to the Lotto game!
@@ -20,6 +20,7 @@ public class lotto {
                 
                 """;
         
+        do {     
         System.out.println(menuStart);
 
         int[] input = new int [5];
@@ -37,8 +38,8 @@ public class lotto {
             System.out.print(input[i] + ", ");
        }
 
-       System.out.println("");
-       System.out.println("And the winning numbers are: ");
+        System.out.println("");
+        System.out.println("And the winning numbers are: ");
         for (int i = 0; i < 5; i++){
             System.out.print(output[i] + ", ");
        }  
@@ -46,13 +47,29 @@ public class lotto {
             for (int i = 0; i < 4; i++){
                 if (input[i+1] == output[i+1]){
                     score = +1;
-                }else{
-                    
+                }else{   
                 }
             }
         
         System.out.println("\nYou had a total of " + score + " matches!");
+        System.out.println(menuEnd);
 
+        Scanner userScan = new Scanner(System.in);
+        int userKeep = userScan.nextInt();
+        switch (userKeep) {
+            case 1:
+                keepPlay = true;
+                break;
+            case 2:
+                keepPlay = false;
+                break;
+            default:
+                System.out.println("Invalid input!");
+                System.out.println("Please enter a valid input:");
+                break;
+            }
+
+        } while (keepPlay);
     }
 
     public static void userNumb(int[] array) {
